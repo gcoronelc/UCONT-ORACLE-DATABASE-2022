@@ -1,10 +1,10 @@
-![DESARROLLO WEB CON SPRING BOOT](https://raw.githubusercontent.com/gcoronelc/UCONT-SPRING-BOOT-2022/main/Imagenes/curso.png)
+![CONSULTAS AVANZADAS CON ORACLE DATABASE](https://raw.githubusercontent.com/gcoronelc/UCONT-ORACLE-DATABASE-2022/main/Imagenes/curso.png)
 
 # DATOS GENERALES
 
 - Lugar: UNIVERSIDAD CONTINENTAL
-- Horario: Sabados de 15 a 18 Horas
-- Inicio: 22-OCT-2022
+- Horario: Domingos de 8 a 11 Horas
+- Inicio: 23-OCT-2022
 - Duración: 15 Horas
 
 # DOCENTE

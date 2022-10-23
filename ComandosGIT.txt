@@ -1,7 +1,7 @@
 ﻿CLONAR EL REPOSITORIO
 ----------------------------------------------
 
-git clone https://github.com/gcoronelc/UNI-FIIS-SPRING-BOOT-01.git
+git clone https://github.com/gcoronelc/UCONT-ORACLE-DATABASE-2022.git
 
 
 
