@@ -175,8 +175,12 @@ select * from (
 where total <= 3;
 
 
+-- subconsultas correlacionadas se debe evitar
 
 
-
+select e.*
+from hr.employees e
+where e.salary > (select avg(e1.salary) from hr.employees e1 
+                    where e1.department_id = e.department_id);
 
 
