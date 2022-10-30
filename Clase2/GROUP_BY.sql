@@ -87,5 +87,29 @@ select p.cur_id, sum(p.pag_importe) recaudado
 from educa.pago p
 group by p.cur_id;
 
+select * from educa.matricula;
+select * from educa.pago;
+
+/*
+Se necesita saber cuántos empleados han ingreso por año en cada departamento. 
+Esquemas: RECURSOS
+
+Solución:
+1.- Grupo: Año
+2.- Subgrupo: Departamento
+*/
+
+select * from hr.employees;
+
+select 
+    extract(year from e.hire_date) anio,
+    e.department_id,
+    count(1) cant_empleados
+from hr.employees e
+group by extract(year from e.hire_date), e.department_id
+order by 1, 2;
+
+
+
 
 
