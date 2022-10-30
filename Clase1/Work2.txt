@@ -1,0 +1,21 @@
+NUEVOS TEMAS
+- Tareas automaticas
+
+
+
+Software
+------------------------------
+- Oracle XE 21c
+- SQL Developer
+- SQL Plus
+- Git For Windows
+- AnyDesk
+
+
+Documentos de Trabajo
+-------------------------------
+Repositorio: https://github.com/gcoronelc/UCONT-ORACLE-DATABASE-2022
+
+
+
+ 

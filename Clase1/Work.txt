@@ -1,0 +1,6 @@
+PRIVILEGIOS DEL SISTEMA
+---------------------------
+- SYSDBA: Conexion como usuario SYS (Grupo ORA_DBA)
+- SYSOPER: (ORA_OPER)
+
+
