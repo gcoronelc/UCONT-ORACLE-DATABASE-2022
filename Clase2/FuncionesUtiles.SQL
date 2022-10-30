@@ -1,4 +1,6 @@
 
+select * from recursos.empleado;
+
 -- NVL(Expr1,Expr2)
 -- Permite obtener un valor concreto en vez de NULL como resultado.
 
@@ -15,7 +17,7 @@ FROM recursos.empleado;
 
 SELECT 
     idempleado, apellido, nombre, 
-    sueldo, nvl2(comision,comision,0), 
+    sueldo, nvl2(comision,comision,0) comision, 
     nvl2(comision,sueldo+comision,sueldo) total 
 FROM recursos.empleado;
 
@@ -40,12 +42,16 @@ FROM recursos.empleado;
         resultado_por_defecto);
 */
 
+
+select decode(1,50,100,1,200,1000) from dual;
+
 SELECT 
     idempleado, apellido, nombre, 
-    sueldo, decode(comision,null,0,comision), 
+    sueldo, decode(comision,null,0,comision) comision, 
     sueldo + decode(comision,null,0,comision) total 
 FROM recursos.empleado;
 
+select * from educa.matricula;
 
 SELECT 
     cur_id, alu_id, mat_fecha, mat_nota
