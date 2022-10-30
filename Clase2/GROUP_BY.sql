@@ -69,7 +69,23 @@ on e.department_id = t.department_id and e.salary = t.salario_minimo
 order by e.department_id;
 
 
+select e.*
+from hr.employees e 
+where (e.department_id, e.salary) in ( select department_id, min(salary) salario_minimo
+        from hr.employees
+        where department_id is not null
+        group by department_id )
+order by e.department_id;
 
+
+-- Recaudado por curso
+
+select count( distinct cur_id) cursos_con_alumnos 
+from educa.matricula;
+
+select p.cur_id, sum(p.pag_importe) recaudado
+from educa.pago p
+group by p.cur_id;
 
 
 
