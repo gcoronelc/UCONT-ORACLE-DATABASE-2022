@@ -110,6 +110,62 @@ group by extract(year from e.hire_date), e.department_id
 order by 1, 2;
 
 
+declare
+  dato number;
+begin
+  dato := nvl(20,30);
+  dbms_output.put_line('dato: ' || to_char(dato));
+end;
+/
+
+
+declare
+  dato number;
+begin
+  dato := case when 1=1 then 100 else 200 end;
+  dbms_output.put_line('dato: ' || to_char(dato));
+end;
+/
+
+-- Tiene un error.
+-- Si lo encuentras te ganas un 20
+declare
+  dato number;
+begin
+  dato := MAX(100);
+  dbms_output.put_line('dato: ' || to_char(dato));
+end;
+/
+
+
+/*
+Desarrolle una sentencia SELECT para encontrar los departamentos que tienen a lo más de 3 trabajadores.
+Esquema: RECURSOS.
+*/
+
+
+-- Paso 1: Contar empleados por departamento
+
+select 
+    e.iddepartamento,
+    count(1) cant_empleados
+from recursos.empleado e
+group by e.iddepartamento;
+
+
+-- Paso 2: Aplicar filtro de grupo
+
+select 
+    e.iddepartamento,
+    count(1) cant_empleados
+from recursos.empleado e
+group by e.iddepartamento
+having count(1) <= 3;
+
+
+
+
+
 
 
 
