@@ -59,6 +59,14 @@ where department_id is not null
 group by department_id;
 
 
+select e.*
+from hr.employees e 
+join ( select department_id, min(salary) salario_minimo
+        from hr.employees
+        where department_id is not null
+        group by department_id ) t
+on e.department_id = t.department_id and e.salary = t.salario_minimo
+order by e.department_id;
 
 
 
