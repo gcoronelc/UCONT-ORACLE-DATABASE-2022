@@ -163,6 +163,17 @@ group by e.iddepartamento
 having count(1) <= 3;
 
 
+select * from (
+    select distinct
+        dpt.iddepartamento,
+        dpt.nombre,
+        count(emp.idempleado) over (partition by dpt.iddepartamento) as total
+    from
+        recursos.departamento dpt
+        inner join recursos.empleado emp on dpt.iddepartamento = emp.iddepartamento
+) t1
+where total <= 3;
+
 
 
 
