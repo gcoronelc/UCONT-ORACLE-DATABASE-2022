@@ -128,8 +128,22 @@ GROUP BY CUBE(d.nombre,c.nombre)
 ORDER BY 1, 2;
 
 
+-- GROUP_ID
 
 
+SELECT 
+	NVL(d.nombre,'TOTAL') DEPARTAMENTO, 
+	NVL(c.nombre,'TOTAL') CARGO, 
+	COUNT(1) EMPLEADOS,
+	SUM(e.sueldo) PLANILLA,
+	GROUPING_ID(d.nombre,c.nombre) GROUPING_ID,
+	GROUP_ID() GROUP_ID
+FROM empleado E 
+JOIN departamento D ON e.iddepartamento = d.iddepartamento 
+JOIN cargo C ON e.idcargo = c.idcargo
+GROUP BY GROUPING SETS ( d.nombre, CUBE(d.nombre,c.nombre) )
+HAVING GROUP_ID() = 0
+ORDER BY 1, 2;
 
 
 
