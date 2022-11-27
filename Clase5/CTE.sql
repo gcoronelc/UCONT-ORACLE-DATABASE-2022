@@ -127,4 +127,35 @@ from    emp_ciu ec;
 */
 
 
+/*
+Ejercicio 4
+
+-----------------------------------------------------------
+NOMBRE                         IMPORTE       IMPORTE
+CURSO         MATRICULADOS     PROYECTADO    RECAUDADO
+-----------------------------------------------------------
+ORACLE SQL       20            20,000.00     15,000.00
+APRENDE ALGO      0            0.00          0.00
+-----------------------------------------------------------
+*/
+
+
+WITH 
+CTE1 AS (
+	SELECT CUR_ID, SUM(MAT_PRECIO) PROYECTADO
+	FROM EDUCA.matricula M
+	GROUP BY CUR_ID
+),
+CTE2 AS (
+	SELECT CUR_ID, SUM(PAG_IMPORTE) RECAUDADO
+	FROM EDUCA.PAGO P
+	GROUP BY CUR_ID
+)
+SELECT 
+	C.CUR_ID, C.CUR_NOMBRE, C.CUR_MATRICULADOS,
+	NVL(CTE1.PROYECTADO,0) PROYECTADO,
+	NVL(CTE2.RECAUDADO,0) RECAUDADO
+FROM EDUCA.CURSO C 
+LEFT JOIN CTE1 ON C.CUR_ID = CTE1.CUR_ID
+LEFT JOIN CTE2 ON C.CUR_ID = CTE2.CUR_ID;
 

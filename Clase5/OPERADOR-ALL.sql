@@ -1,5 +1,7 @@
 /*
 
+OPERADOR ALL
+
  <expr> > ALL ( <lista> )
  
  <expr> > ALL ( <subconsulta> )
